@@ -1,0 +1,188 @@
+/* Error container */
+.error-container {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* BMI Results Styles */
+.bmi-results-content {
+    padding: 40px 20px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.bmi-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.bmi-status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.bmi-illustration {
+    width: 120px;
+    height: 120px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.person-icon {
+    width: 60px;
+    height: 60px;
+    background: #666;
+    border-radius: 50%;
+    position: relative;
+}
+
+.person-icon::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 30px;
+    background: #666;
+    border-radius: 20px 20px 0 0;
+}
+
+.bmi-status-info {
+    max-width: 400px;
+}
+
+.bmi-status {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.bmi-scale {
+    width: 100%;
+    max-width: 350px;
+}
+
+.scale-bar {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #4A90E2 0%, #50E3C2 25%, #F5A623 50%, #D0021B 75%, #D0021B 100%);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.scale-indicator {
+    position: absolute;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 3px solid #333;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: left 0.3s ease;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.bmi-description {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+    border-left: 4px solid #4CAF50;
+    text-align: left;
+}
+
+.bmi-description p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.bmi-disclaimer {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+}
+
+.bmi-disclaimer p {
+    color: #856404;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Category-specific colors */
+.bmi-results-content.underweight .bmi-status {
+    color: #4A90E2;
+}
+
+.bmi-results-content.underweight .bmi-description {
+    border-left-color: #4A90E2;
+}
+
+.bmi-results-content.normal .bmi-status {
+    color: #50E3C2;
+}
+
+.bmi-results-content.normal .bmi-description {
+    border-left-color: #50E3C2;
+}
+
+.bmi-results-content.overweight .bmi-status {
+    color: #F5A623;
+}
+
+.bmi-results-content.overweight .bmi-description {
+    border-left-color: #F5A623;
+}
+
+.bmi-results-content.obese .bmi-status {
+    color: #D0021B;
+}
+
+.bmi-results-content.obese .bmi-description {
+    border-left-color: #D0021B;
+}
+
+@media (max-width: 768px) {
+    .bmi-status-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .bmi-status {
+        font-size: 36px;
+    }
+    
+    .scale-labels {
+        font-size: 8px;
+    }
+}

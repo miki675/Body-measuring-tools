@@ -1,0 +1,302 @@
+.measuring_calculator .health_tools{
+    padding-right: 20px;
+    margin-bottom: 15px;
+}
+.measuring_calculator .health_tools span{
+    margin-right: 15px;
+}
+
+.calculator-container{
+    max-width: 565px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.calculator-header {
+    background: white;
+    padding: 20px;
+    /* border-bottom: 1px solid #e9ecef; */
+    position: relative;
+}
+
+.calculator-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 19px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-button:hover {
+    border-color: #1a5f3f;
+}
+
+.dropdown-arrow {
+    transition: transform 0.2s;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.form-content {
+    padding: 20px;
+}
+
+.unit-toggle {
+    display: flex;
+    background: #EEEEEE;
+    border-radius: 8px;
+    padding: 4px;
+    margin-bottom: 20px;
+    gap: 8px;
+}
+
+.unit-btn {
+    flex: 1;
+    padding: 18px 10px;
+    border: none;
+    background: white;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.unit-btn.active {
+    background: #1a5f3f;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333333;
+    font-weight: 600;
+}
+
+.input-container {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 19px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #1a5f3f;
+}
+
+.input-unit {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: 600;
+    color: #666;
+    pointer-events: none;
+}
+
+.height-inputs {
+    display: flex;
+    gap: 12px;
+}
+
+.height-inputs .input-container {
+    flex: 1;
+}
+
+.radio-group {
+    display: flex;
+    gap: 200px;
+    margin-top: 8px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.radio-input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+    transition: border-color 0.2s;
+}
+
+.radio-input.checked {
+    border-color: #1a5f3f;
+}
+
+.radio-input.checked::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #1a5f3f;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-label {
+    font-size: 16px;
+    color: #666666 !important; 
+}
+
+/* Hide number input spinners/arrows for all browsers */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.file-upload {
+    border: 1px solid #002C1E4D;
+    border-radius: 8px;
+    padding: 50px 30px;
+    text-align: center;
+    background: #EEFFFA;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+}
+
+.file-upload:hover {
+    border-color: #1a5f3f;
+}
+
+.upload-icon {
+    width: 32px;
+    height: 32px;
+    /* background: #1a5f3f; */
+    border-radius: 6px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+
+.upload-text {
+    font-size: 16px;
+    color: #0F0F0F;
+    font-weight: 700;
+    margin-bottom: 5px;
+
+    strong{
+        color: #164a33;
+        text-decoration: underline;
+    }
+}
+
+.upload-subtext {
+    font-size: 12px;
+    color: #676767;
+    font-weight: 400;
+}
+
+.form-actions {
+    display: flex;
+    gap: 82px;
+    margin-top: 30px;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #666;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.btn-primary {
+    background: #1a5f3f;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #164a33;
+}
+
+.metric-hidden {
+    display: none;
+}
+
+.imperial-hidden {
+    display: none;
+}
+
+.result-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8fffe;
+    border-radius: 8px;
+    border-left: 4px solid #1a5f3f;
+    display: none;
+}
+
+.result-title {
+    font-weight: 600;
+    color: #1a5f3f;
+    margin-bottom: 5px;
+}
+
+.result-value {
+    font-size: 18px;
+    color: #333;
+}

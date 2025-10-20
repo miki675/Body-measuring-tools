@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydration Calculator</title>
+  <style>
+        /* CSS provided by the user, with the corrected class name */
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+        .error-message ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .error-message li {
+            list-style-type: disc;
+        }
+
+        #resultsContainer {
+            display: none;
+            text-align: center;
+        }
+        #resultsContainer h3 {
+            font-size: 28px;
+            font-weight: bold;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        #resultsContainer .result-image-container img {
+            max-width: 200px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="../style.css"> 
+    <link rel="stylesheet" href="../calculators.css">
+
+    <!-- INTER FONT FAMILY  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <!-- FONT_AWESOME CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/> -->
+    <!-- Include this -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+
+
+</head>
+<body class="measuring_calculator">
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="https://project.websterzone.com/medical-tools/" class="logo"><img src="../Images/logo.png" alt=""></a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Features
+                        <img src="../Images/Icon.png" class="dropdown-arrow"> 
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">Health Tracking</a>
+                        <a href="#" class="dropdown-item">Nutrition Guide</a>
+                        <a href="#" class="dropdown-item">Exercise Plans</a>
+                        <a href="#" class="dropdown-item">Reports</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Tools
+                        <img src="../Images/Icon.png" class="dropdown-arrow"> 
+                    </a>
+                    <div class="dropdown convertors">
+                      <div class="dropdown_container">
+
+                            <div class="single_column">
+                                <h4> <img src="../Images/image-convertors.png" alt=""> Image Convertors</h4>
+                                <a href="#" class="dropdown-item"> <img src="../Images/image-convert-single.png" alt="">Jpeg to Png</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/image-convert-single.png" alt="">Jpeg to Png</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/image-convert-single.png" alt="">Jpeg to Png</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/image-convert-single.png" alt="">Jpeg to Png</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/image-convert-single.png" alt="">Jpeg to Png</a>
+
+                            </div>
+                            
+                            <div class="single_column">
+                                <h4> <img src="../Images/video.png" alt=""> Video Convertor</h4>
+                                <a href="#" class="dropdown-item"> <img src="../Images/video-to-audio (1).png" alt="">Video to Audio</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/video-to-audio (1).png" alt="">Video to Audio</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/video-to-audio (1).png" alt="">Video to Audio</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/video-to-audio (1).png" alt="">Video to Audio</a>
+                                <a href="#" class="dropdown-item"><img src="../Images/video-to-audio (1).png" alt="">Video to Audio</a>
+
+                                </div>
+
+                                <div class="single_column">
+                                    <h4> <img src="../Images/unit.png" alt=""> Unit Convertor</h4>
+                                    <a href="#" class="dropdown-item"> <img src="../Images/kg-to-gram.png" alt="">Kg to Gram</a>
+                                    <a href="#" class="dropdown-item"><img src="../Images/kg-to-gram.png" alt="">Kg to Gram</a>
+                                    <a href="#" class="dropdown-item"><img src="../Images/kg-to-gram.png" alt="">Kg to Gram</a>
+                                    <a href="#" class="dropdown-item"><img src="../Images/kg-to-gram.png" alt="">Kg to Gram</a>
+                                    <a href="#" class="dropdown-item"><img src="../Images/kg-to-gram.png" alt="">Kg to Gram</a>
+    
+                                </div>
+                      </div>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Trackers
+                        <img src="../Images/Icon.png" class="dropdown-arrow"> 
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">Weight Tracker</a>
+                        <a href="#" class="dropdown-item">Calorie Counter</a>
+                        <a href="#" class="dropdown-item">Sleep Monitor</a>
+                        <a href="#" class="dropdown-item">Water Intake</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Company
+                        <img src="../Images/Icon.png" class="dropdown-arrow"> 
+                    </a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item">About Us</a>
+                        <a href="#" class="dropdown-item">Contact Us</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        Calculator
+                        <img src="../Ismages/Icon.png" class="dropdown-arrow"> 
+                    </a>
+                    <div class="dropdown">
+                        <a href="http://127.0.0.1:5500/ideal-weight-calculator.html" class="dropdown-item">BMI Calculator</a>
+                        <a href="#" class="dropdown-item">Calorie Calculator</a>
+                        <a href="#" class="dropdown-item">Body Fat Calculator</a>
+                    </div>
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a href="#" class="nav-link">Support</a>
+                </li> -->
+                
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Blog</a>
+                </li>
+            </ul>
+            
+            <a href="https://project.websterzone.com/medical-tools/submit-tools.html" class="cta-button green_btns_hover">Submit your tool / app</a>
+            
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    
+   <!-- hero_section div -->
+    <div class="tools-section">
+        <div class="tools-container">
+            <div class="health_tools">
+               <span>⚡️ Tools</span><p>Hydration Calculator</p>
+            </div>
+            <h1>Tools You <span>Can’t Miss</span></h1>
+            <p class="tools-description">The Body Mass Index measures a person's leanness or corpulence based on height and weight and quantifies body fat. You can get your BMI by inputting your size and weight into this BMI Calculator</p>
+           
+            <div class="calculator-container">
+        <div class="calculator-header">
+            <div class="calculator-title">Calculator</div>
+            <div class="dropdown-container">
+                <button class="dropdown-button" type="button" id="dropdownBtn">
+                    <span>Hydration Calculator</span>
+                    <span class="dropdown-arrow"><img src="../Images/Vector.png" alt="Up Arrow"></span>
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="../../Tools/Ideal Calculator/index.html" class="dropdown-item">Ideal Weight calculator</a>
+                    <a href="../../Tools/BMI Calculator/bmi.html" class="dropdown-item">BMI Calculator</a>
+                    <a href="../../Tools/fasting calculator/fast.html" class="dropdown-item">Intermittent fasting calculator</a>
+                    <a href="../../Tools/Calorie/cal.html" class="dropdown-item">Calorie deficit calculator</a>
+                    <a href="../../Tools/weight loss calculator/weight.html" class="dropdown-item">Weight Loss calculator</a>
+                    <a href="../../New folder/Tools/Body Fat Calculator/body.html" class="dropdown-item">Body fat percentage calculator</a>
+                    <a href="../../New folder/Tools/Body Shape Calculator/shape.html" class="dropdown-item">Body Shape calculator</a>
+                    <a href="../../New folder/Tools/fat intake calculator/fat.html" class="dropdown-item">Fat Intake Weight calculator</a>
+                </div>
+            </div>
+        </div>
+        
+   <div class="form-content">
+    <div class="unit-toggle">
+        <button type="button" class="unit-btn active" data-unit="metric">Metric</button>
+        <button type="button" class="unit-btn" data-unit="imperial">Imperial</button>
+    </div>
+    
+    <form id="calculatorForm">
+        <div class="form-group">
+            <label class="form-label">Your Weight</label>
+            <div class="input-container metric-weight-field">
+                <input type="number" class="form-input" id="weightMetric" placeholder="70">
+                <span class="input-unit">kg</span>
+            </div>
+            <div class="input-container imperial-weight-field" style="display: none;">
+                <input type="number" class="form-input" id="weightImperial" placeholder="150">
+                <span class="input-unit">lbs</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">What’s your daily activity?</label>
+            <div class="custom-dropdown" id="activityDropdown">
+                <div class="custom-select-trigger">Select your activity level</div>
+                <ul class="custom-options">
+                    <li class="custom-option default-option" data-value="" disabled>Select your activity level</li>
+                    <li class="custom-option" data-value="30">Without training</li>
+                    <li class="custom-option" data-value="35">Up to 30 min/day training</li>
+                    <li class="custom-option" data-value="40">Up to 60 min/day training</li>
+                    <li class="custom-option" data-value="45">Up to 90 min/day training</li>
+                    <li class="custom-option" data-value="50">Up to 120 min/day training</li>
+                </ul>
+                <input type="hidden" name="activity_level" id="activityLevel">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Your Gender</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <div class="radio-input" data-value="male"></div>
+                    <span class="radio-label">Male</span>
+                </label>
+                <label class="radio-option">
+                    <div class="radio-input checked" data-value="female"></div>
+                    <span class="radio-label">Female</span>
+                </label>
+            </div>
+        </div>
+        
+   <!--   <div class="file-upload">
+            <div class="upload-icon"><img src="../Images/Upload icon.png" alt=""></div>
+            <div class="upload-text">Drag & drop files or <strong>Browse</strong></div>
+            <div class="upload-subtext">Supported formates: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT</div>
+        </div> -->
+        
+        <!-- Corrected Error Message Container with a proper list inside -->
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <ul id="errorList"></ul>
+        </div>
+        
+        <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="clearBtn">Clear Details</button>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </div>
+    </form>
+</div>
+<!-- result container -->
+<div id="resultsContainer" style="display: none;">
+    <p class="result-text-top" style="font-size: 18px; color: #333; margin-bottom: 5px;">You need to drink at least</p>
+    <p id="glassesResult" style="font-size: 36px; font-weight: bold; color: #2D654E; margin-top: 0; margin-bottom: 20px;">0 glasses of water every day</p>
+    
+    <div class="result-image-container">
+        <img src="water.png" alt="Water Bottle" style="max-width: 250px; margin: auto;">
+    </div>
+    <div class="result-details" style="text-align: center; margin-top: 20px;">
+        <p class="result-text" style="font-size: 16px; color: #555; margin-bottom: 5px;">
+            This is equivalent to <span id="litersAmount">0</span> liters [<span id="ouncesAmount">0</span> ounces] of water.
+        </p>
+        <p class="disclaimer-text" style="font-size: 12px; color: #888; margin: 0 20px;">
+            This is only an estimate. The actual requirement may vary depending on many factors like fluid content in food, pregnancy, breastfeeding, exercise, high altitude, and medical abnormalities.
+        </p>
+        <p class="disclaimer-text" style="font-size: 12px; color: #888; margin: 10px 20px 0;">
+            Stay hydrated with this simple and intuitive hydration calculator. The hydration calculator is based on the idea that most of us are not drinking enough water because we don't know how much or when to drink. This calculator uses your body weight and other parameters to calculate the recommended amount of water for you.
+        </p>
+    </div>
+    
+    <div class="form-actions" style="margin-top: 25px;">
+        <button type="button" class="btn btn-primary" style="background-color: #2D654E; color: #fff; border: none; font-size: 16px; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; display: inline-block; margin-right: 10px;">Unlock Your Custom Plan!</button>
+       <a href="hydration.html" class="btn btn-secondary" id="calculateAgainLink" style="background-color: #f0f0f0; color: #333; border: 1px solid #ccc; font-size: 16px; padding: 12px 24px; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease; display: inline-block;">Calculate again</a>
+    </div>
+</div>
+</div>
+</div>
+   <section class="abc" id="abcd" style="display:none;">
+    <div class="image-slider-container">
+        <h2 class="slider-title">You May Also Like</h2> 
+        <div class="image-slider-wrapper">
+            <div class="image-slider-track" id="imageSliderTrack">
+                <a href="../ideal weight cal/ideal.html" class="image-slide">
+                    <img src="../images/1.png" alt="Ideal Weight Calculator" width="105" height="105">
+                    <span>Ideal Weight Calculator</span>
+                </a>
+                
+                <a href="../Bmi Cal/bmi.html" class="image-slide">
+                    <img src="../images/2.png" alt="BMI Calculator" width="140" height="90">
+              <span> BMI Calculator </span>
+                </a>
+                
+                <a href="../Fasting Cal/Intermittent-fasting.html" class="image-slide">
+                    <img src="../images/3.png" alt="Intermittent Fasting Calculator"> 
+                <span> Intermittent fasting calculator </span>
+                </a>
+                
+                <a href="../Calorie Cal/calorie.html" class="image-slide">
+                    <img src="../images/4.png" alt="Calorie Deficit Calculator">
+                <span>    Calorie Deficit Calculator  </span>
+                </a>
+                
+                <a href="../weight loss Cal/weight_loss_calculator.html" class="image-slide">
+                    <img src="../images/5.png" alt="Weight Loss Calculator">
+             <span> Weight Loss Calculator </span>
+                </a>
+                
+                <a href="../Body Fat % Cal/bodyfat.html" class="image-slide">
+                    <img src="../images/6.png" alt="Body Fat Percentage Calculator">
+              <span> Body Fat Percentage Calculator </span>
+                </a>
+                
+                <a href="../Body Shape Cal/bodyshape.html" class="image-slide">
+                    <img src="../images/7.png" alt="Body Shape Calculator">
+                <span>    Body Shape Calculator   </span>
+                </a>
+                
+                <a href="../Hydration Cal/hydration.html" class="image-slide">
+                    <img src="../images/8.png" alt="Hydration Calculator">
+               <span> Hydration Calculator </span>
+                </a>
+                
+                <a href="../Fat intake Cal/fat_intake.html" class="image-slide">
+                    <img src="../images/9.png" alt="Goal Setting Calculator">
+               <span>  Fat Intake Calculator  </span>
+                </a>
+            </div>
+            
+            <div class="image-controls">
+                <button class="image-arrow arrow-left" id="prevBtn">
+                    <img src="../images/Right Button (1).png" width="50" height="50" alt="Previous">
+                </button>
+                
+                <button class="image-arrow arrow-right" id="nextBtn">
+                    <img src="../images/Right Button.png" width="50" height="50" alt="Next">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+    <footer>
+       <section class="footer_inner">
+            <div class="footer_left">
+                <div class="first_section footer_section">
+                    <div class="first_content">
+                        <!-- <h1>Healthy Tools</h1> -->
+                        <img src="../Images/footer_logo.png" alt="">
+                        <p>Whatever you want to ask, our chat has the answers</p>
+                    </div>
+                    <div class="second_content">
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-linkedin"></i>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="footer_right_main">
+                <div class="footer_right">
+                    <div class="second_section footer_section">
+                        <h4>Support</h4>
+                        <div class="second_menu menu">
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                        </div>
+                    </div>
+                    <div class="third_section footer_section">
+                        <h4>Support</h4>
+                        <div class="second_menu menu">
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                        </div>
+                    </div>
+                    <div class="fourth_section footer_section">
+                        <h4>Support</h4>
+                        <div class="second_menu menu">
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                        </div>
+                    </div>
+                    <div class="fifth_section footer_section">
+                        <h4>Support</h4>
+                        <div class="second_menu menu">
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                            <a href="#">Weekly Demos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="app_downloads">
+                    <img src="../Images/Mobile app store badge.png" alt="">
+                    <img src="../Images/play_store.png" alt="">
+                </div>
+            </div>
+            
+       </section>
+       <div class="copyright_section">
+        <p>2025 Healthy Tools All Right Reserved</p>
+    </div>
+    </footer>
+
+
+    
+      
+      
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Then Slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="hydration.js"> </script>
+    <script src="../mainscript.js"></script>
+</body>
+</html>
